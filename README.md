@@ -1,4 +1,4 @@
-# sofiatraffic-api
+# Sofia Traffic API
 
 [![Build Status](https://travis-ci.org/NikolayGenov/sofiatraffic-api.svg?branch=master)](https://travis-ci.org/NikolayGenov/sofiatraffic-api)
 [![Coverage Status](https://coveralls.io/repos/github/NikolayGenov/sofiatraffic-api/badge.svg?branch=master)](https://coveralls.io/github/NikolayGenov/sofiatraffic-api?branch=master)
