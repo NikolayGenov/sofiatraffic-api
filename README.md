@@ -1,14 +1,11 @@
 # Sofia Traffic API
 
 [![Build Status](https://travis-ci.org/NikolayGenov/sofiatraffic-api.svg?branch=master)](https://travis-ci.org/NikolayGenov/sofiatraffic-api)
-[![Coverage Status](https://coveralls.io/repos/github/NikolayGenov/sofiatraffic-api/badge.svg?branch=master)](https://coveralls.io/github/NikolayGenov/sofiatraffic-api?branch=master)
+[![codecov](https://codecov.io/gh/NikolayGenov/sofiatraffic-api/branch/master/graph/badge.svg)](https://codecov.io/gh/NikolayGenov/sofiatraffic-api)
+
+
 
 ## Usage
-You can generate/update the auto generated code by executing:
-```
-swagger generate server -f ./swagger.yml -A SofiaTraffic
-```
-in the project main directory
 
 After that you should `go build` in the `cmd` directory, where `main.go` is located
 
@@ -22,6 +19,12 @@ Only then you can start the server on port 8080:
 ```
 ./sofia-traffic-server --tls-key domain.key --tls-certificate domain.crt --tls-port 8080
 ```
+## When making changes
+You can update the auto generated code by executing the following code in the project main directory:
+```
+swagger generate server -f ./swagger.yml -A SofiaTraffic
+```
+
 
 ## Documentation
 Currently the documentation of the API can be found on `https://localhost:8080/v1/docs`
