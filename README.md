@@ -1,5 +1,7 @@
 # sofiatraffic-api
 
+[![Build Status](https://travis-ci.org/NikolayGenov/sofiatraffic-api.svg?branch=master)](https://travis-ci.org/NikolayGenov/sofiatraffic-api)
+
 ## Usage
 You can generate/update the auto generated code by executing:
 `swagger generate server -f ./swagger.yml -A SofiaTraffic`
