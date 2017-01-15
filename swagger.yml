@@ -1,0 +1,108 @@
+swagger: '2.0'
+info:
+  title: Sofia Traffic API
+  description: A better API for Sofia Traffic service
+  version: "1.0.0"
+host: localhost
+schemes:
+  - https
+basePath: /v1
+produces:
+  - application/json
+paths:
+  /stations:
+    get:
+      summary: List of stations
+      description: |
+        List of all the stations TODO
+        Supports pagination
+      responses:
+        200:
+          description: An array of stations
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Station'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a station
+      description: Create a new station TODO
+      parameters:
+        - name: station
+          in: body
+          required: true
+          description: The station to create.
+          schema:
+            $ref: '#/definitions/Station'
+      responses:
+        204:
+          description: Succesfully created a station
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /lines:
+    get:
+      summary: List of lines
+      description: |
+        List of all the lines TODO
+        supports pagination
+      responses:
+        200:
+          description: An array of stations
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Station'
+    post:
+      summary: TODO post
+      parameters:
+        - name: line
+          in: body
+          required: true
+          description: The line to create.
+          schema:
+            $ref: '#/definitions/Line'
+      responses:
+        204:
+          description: Succesfully created a line
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+
+definitions:
+  Station:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Name of the station. Note that there could be multiple stations with that name
+      UMC_id:
+        type: number
+        description: The id that Urban Mobility Center uses - usually 4 digits
+  Line:
+    type: object
+    properties:
+      common_name:
+        type: string
+        description: The common name of the line, without specifing the direction
+      line_type:
+        enum:
+            - Bus
+            - Tram
+            - Trolley
+            - Subway
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string
