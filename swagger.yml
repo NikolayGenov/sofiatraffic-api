@@ -58,7 +58,7 @@ paths:
             items:
               $ref: '#/definitions/Station'
     post:
-      summary: TODO post
+      summary: Create a line
       parameters:
         - name: line
           in: body
